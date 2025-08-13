@@ -5,6 +5,7 @@ import java.util.List;
 public class Lion {
 
     boolean hasMane;
+    private SuperFeline superFeline;
 
     public Lion(String sex) throws Exception {
         if ("Самец".equals(sex)) {
@@ -16,17 +17,19 @@ public class Lion {
         }
     }
 
-    Feline feline = new Feline();
-
-    public int getKittens() {
-        return feline.getKittens();
-    }
-
     public boolean doesHaveMane() {
         return hasMane;
     }
 
+    public Lion(SuperFeline superFeline) {
+        this.superFeline = superFeline;
+    }
+
+    public int getKittens() {
+        return superFeline.getKittens();
+    }
+
     public List<String> getFood() throws Exception {
-        return feline.getFood("Хищник");
+        return superFeline.getFood();
     }
 }
