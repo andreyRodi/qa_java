@@ -15,7 +15,6 @@
     </properties>
 
     <dependencies>
-        <!-- JUnit 5 -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
@@ -23,7 +22,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Mockito -->
+
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
@@ -31,7 +30,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Mockito + JUnit 5 -->
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-junit-jupiter</artifactId>
@@ -42,7 +40,6 @@
 
     <build>
         <plugins>
-            <!-- Компиляция под Java 11 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -53,7 +50,6 @@
                 </configuration>
             </plugin>
 
-            <!-- JUnit 5 запуск -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -63,13 +59,11 @@
                 </configuration>
             </plugin>
 
-            <!-- JaCoCo -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.10</version>
                 <executions>
-                    <!-- Запуск агента перед тестами -->
                     <execution>
                         <id>prepare-agent</id>
                         <goals>
@@ -77,7 +71,6 @@
                         </goals>
                     </execution>
 
-                    <!-- Генерация отчёта после тестов -->
                     <execution>
                         <id>report</id>
                         <phase>verify</phase>
@@ -86,7 +79,6 @@
                         </goals>
                     </execution>
 
-                    <!-- Проверка покрытия -->
                     <execution>
                         <id>check</id>
                         <phase>verify</phase>
